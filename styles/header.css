@@ -1,0 +1,162 @@
+.cabecalho__menu_hamburguer{
+    width: 24px;
+    height: 24px;
+    background-image: url("../imagens/Menu.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    display: inline-block;
+}
+.cabecalho{
+    background-color: #ffffff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative; /*Libera a opção de utilizar outros atributos, top, left, right, botton.*/
+}
+.logo_alurabooks{
+    margin-left: 1em;
+    align-items: center;
+}
+.conteiner{
+    display: flex;
+    align-items: center;
+}
+.conteiner__botao{
+    display: none;
+}
+.conteiner__botao:checked ~ .conteiner_rotulo > .cabecalho__menu_hamburguer{
+    background-image: url('../imagens/Menu\ Aberto.svg');
+}
+.conteiner__botao:checked ~ .conteiner_rotulo{
+    background: #002F52;
+}
+.conteiner__imagem{
+    padding: 1em;
+}
+.lista-menu{
+    display: none;
+    position: absolute; /*Permite que o elemento seja posicionado de acordo com o outro elemento que não está estático, por isso o cabecalho ficou com a opção relative, para liberar o absolute e poder mover ele para baixo do cabecalho.*/
+    top: 100%; /*Tirou 100% do cabecalho que está acima e colocou a lista-menu para baixo.*/
+    width: 60vw;
+}
+.conteiner__botao:checked~.lista-menu{
+    display: block; /*Usei a pseudo-classe 'checked' para analisar se o input foi preenchido ele mostra a class 'lista-menu' que foi pesquisado através do '~' */
+}
+.lista-menu__titulo,
+.lista-menu__item{
+    padding: 1em;
+    background-color: #FFFFFF;
+}
+.lista-menu__titulo{
+    color: #EB9B00;
+    font-family: 'Poppins';
+    font-weight: 700;
+}
+.lista-menu__link{
+    text-decoration: none;
+    color: #002F52;
+    font-family: 'Poppins';
+    font-weight: 400;
+}
+.conteiner_titulo{
+    display: none;
+}
+.opcoes{
+    display: none;
+}
+.conteiner_titulo{
+    display: none;
+}
+.conteiner_texto{
+    display: none;
+}
+
+
+@media screen and (min-width: 1024px) {
+    .cabecalho{
+        padding: 0 3em;
+    }
+    .conteiner{
+        max-width: 100vw;
+    }
+    .conteiner_titulo, .conteiner_titulo_negrito{
+        font-family: 'Josefin Sans';
+        font-size: 30px;
+    }
+    .conteiner_titulo{
+        font-weight: 400;
+        display: block;
+    }
+    .conteiner_titulo_negrito{
+        font-weight: 700;
+    }
+    .opcoes{
+        display: flex;
+    }
+    .opcoes_item{
+        padding: 0 1em;
+        list-style-type: none;
+        font-family: 'poppins';
+        font-size: 16px;
+        font-weight: 400;
+        color: #000000;
+        text-transform: uppercase;
+    }
+    .opcoes_link{
+        text-decoration: none;
+        color: #000000;
+        
+    }
+    .cabecalho__menu_hamburguer{
+        display: none;
+    }
+    .conteiner__imagem__transparente{
+        display: none;
+    }
+    .opcoes_botao:checked ~ .lista-menu{
+        display: block;
+        width: auto;
+    }
+    .opcoes_botao{
+        display: none;
+        
+    }
+    .lista-menu{
+        list-style-type: none;
+    }
+    .conteiner_texto{
+        display: none;
+    }
+    .opcoes_botao:checked ~ .opcoes_rotulo > .opcoes_item {
+        background: #002F52;
+        color: white;
+    }
+    .opcoes_item{
+        padding: 2em 1em;
+    }
+    .lista-menu__link:hover{
+        background: #002F52;
+    }
+    .lista-menu__item:hover>.lista-menu__link{
+        -webkit-text-fill-color: white;
+    }
+
+@media screen and (min-width: 1700px){
+    .conteiner_link{
+        display: flex;
+        align-items: center;
+        text-decoration: none;
+    }
+    .conteiner_texto{
+        font-size: 18px;
+        font-weight: 400;
+        font-family: 'poppins';
+        color: #000000;
+        padding-right: 2em;
+        display: block;
+    }
+    .opcoes{
+        margin-right: auto;
+        padding-left: 4em;
+    }
+}

@@ -1,0 +1,66 @@
+.rodape{
+    border-top: 1px solid;
+}
+.titulo_rodape{
+    font-family: 'poppins';
+    font-weight: 400;
+    font-size: 16px;
+    padding: 1em 1.5em;
+}
+.educacao_rodape{
+    display: none;
+}
+
+@media screen and (min-width: 1024px){
+    .educacao_rodape{
+        display: block;
+    }
+    .rodape{
+        display: flex;
+        gap: 3em;
+        padding: 2em 1em;
+        background-color: white;
+    }
+    .titulo_rodape{
+        font-size: 24px;
+    }
+    .titulo_rodape_1{
+        font-size: 14px;
+        font-family: 'poppins';
+        font-weight: 400;
+        margin: 1.5em;
+        color: rgba(133, 133, 133, 1);
+    }
+    .itens_rodape{
+        font-size: 14px;
+        font-family: 'poppins';
+        font-weight: 400;
+        color: #474646;
+        display: flex;
+        align-items: center;
+        margin-left: 1em;
+        gap: .5em;
+    }
+    .lista_rodape{
+        display: flex;
+        flex-direction: column;
+        gap: 1em;
+        list-style-type: none;
+    }
+}
+
+@media screen and (min-width: 1700px) {
+    .rodape{
+        justify-content: flex-start;
+        padding-left: 8em;
+        
+    }
+    .educacao_rodape{
+        border-left: 1px solid gray;
+    }
+    .rodape_educacao{
+        display: flex;
+        gap: 13em;
+        padding: 2em 0 3em 0;
+    }
+}
